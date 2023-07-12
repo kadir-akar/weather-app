@@ -71,7 +71,7 @@ const Search = ({
           (option: any, index: number): JSX.Element => (
             <li
               key={option.name + "-" + index}
-              onClick={() => onOptionSelect(option)}
+              onClick={() => onOptionSelect(option as optionType)}
             >
               <button className=" text-left text-sm w-full hover:bg-zinc-700 hover:text-white px-2 py-1 cursor-pointer p-1">
                 {option.name}, {option.country}
