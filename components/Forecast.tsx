@@ -83,6 +83,7 @@ const Forecast = ({ data }: Props): JSX.Element => {
             {data.name}
             <span className="ml-2">{data.country}</span>
           </h2>
+
           <h2
             className="
         flex items-center justify-center
@@ -92,35 +93,6 @@ const Forecast = ({ data }: Props): JSX.Element => {
           >
             <Degree temp={Math.round(today.main.temp)} />
           </h2>
-          <div
-            className="
-          flex flex-col items-center justify-center
-          p-2
-          m-2
-          bg-opacity-80
-          bg-blue-100
-          rounded-lg
-          shadow-lg
-          w-auto
-          h-auto
-          m-5
-          text-center
-          p-5
-        "
-          >
-            <h2 className="text-sm">Humidity</h2>
-            <h2 className="text-xl">{today.main.humidity}%</h2>
-            <h2 className="text-sm">Wind</h2>
-            <h2 className="text-xl">{today.wind.speed} km/h</h2>
-          </div>
-          <p className="text-sm">
-            {today.weather[0].main} - {today.weather[0].description}
-          </p>
-          <p className="text-sm">
-            H:
-            <Degree temp={Math.round(today.main.temp_max)} /> L:
-            <Degree temp={Math.round(today.main.temp_min)} />
-          </p>
           <div className="flex items-center">
             {data.list.map((item, index) => {
               if (index === 0) return null;
@@ -166,6 +138,35 @@ const Forecast = ({ data }: Props): JSX.Element => {
               );
             })}
           </div>
+          <div
+            className="
+          flex flex-col items-center justify-center
+          p-2
+          m-2
+          bg-opacity-80
+          bg-blue-100
+          rounded-lg
+          shadow-lg
+          w-auto
+          h-auto
+          m-5
+          text-center
+          p-5
+        "
+          >
+            <h2 className="text-sm">Humidity</h2>
+            <h2 className="text-xl">{today.main.humidity}%</h2>
+            <h2 className="text-sm">Wind</h2>
+            <h2 className="text-xl">{today.wind.speed} km/h</h2>
+          </div>
+          <p className="text-sm">
+            {today.weather[0].main} - {today.weather[0].description}
+          </p>
+          <p className="text-sm">
+            H:
+            <Degree temp={Math.round(today.main.temp_max)} /> L:
+            <Degree temp={Math.round(today.main.temp_min)} />
+          </p>
         </div>
       </div>
     </div>
